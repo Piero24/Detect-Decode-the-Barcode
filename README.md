@@ -22,14 +22,14 @@
     <a href="https://github.com/Piero24/Barcode-Pipeline/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/piero24/Barcode-Pipeline">
     </a>
-    <a href="https://colab.research.google.com/github/Piero24/Barcode-Pipeline/blob/main/Barcode_Detection_and_Decoding.ipynb">
+    <a href="https://colab.research.google.com/github/Piero24/Detect-Decode-the-Barcode/blob/main/Decode_the_Barcode.ipynb">
     <img src="https://colab.research.google.com/assets/colab-badge.svg">
     </a>
 </p>
 <p align="center">
     A two-stage computer vision pipeline to detect and normalize barcodes from images using a fine-tuned YOLOv8 model.
     <br/>
-    <a href="https://colab.research.google.com/github/Piero24/Barcode-Pipeline/blob/main/Barcode_Detection_and_Decoding.ipynb"><strong>View a Demo »</strong></a>
+    <a href="https://colab.research.google.com/github/Piero24/Detect-Decode-the-Barcode/blob/main/Decode_the_Barcode.ipynb"><strong>View a Demo »</strong></a>
     <br/>
     <br/>
     <a href="https://github.com/Piero24/Barcode-Pipeline/issues">Report Bug</a>
@@ -100,7 +100,7 @@
     <a href="#top">Try a demo on Google Colab</a>
 </p>
 <p align="center">
-    <a href="https://colab.research.google.com/github/Piero24/Barcode-Pipeline/blob/main/Barcode_Detection_and_Decoding.ipynb">
+    <a href="https://colab.research.google.com/github/Piero24/Detect-Decode-the-Barcode/blob/main/Decode_the_Barcode.ipynb">
         <img src="https://colab.research.google.com/assets/colab-badge.svg">
     </a>
 </p>
