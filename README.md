@@ -1,36 +1,40 @@
+<div id="top"></div>
 <br/>
 <br/>
 
 <p align="center">
-  <img src="https://cdn-icons-png.flaticon.com/512/1251/1251760.png" width="105" height="100">
+  <img src="https://cdn-icons-png.flaticon.com/512/1251/1251564.png" width="105" height="100">
 </p>
 <h1 align="center">
-    Barcode Detection & Decoding Pipeline (Incomplete)
+    <a href="https://github.com/Piero24/Barcode-Pipeline">Barcode Detection & Decoding Pipeline</a>
 </h1>
 <p align="center">
     <!-- BADGES -->
-    <a href="https://github.com/Piero24/YOUR-REPO-NAME/commits/master">
-    <img src="https://img.shields.io/github/last-commit/piero24/VanillaNet-cpp">
+    <a href="https://github.com/Piero24/Barcode-Pipeline/commits/main">
+    <img src="https://img.shields.io/github/last-commit/piero24/Barcode-Pipeline">
     </a>
-    <a href="https://github.com/Piero24/YOUR-REPO-NAME">
-    <img src="https://img.shields.io/badge/Status-Incomplete-yellow.svg">
+    <a href="https://github.com/Piero24/Barcode-Pipeline">
+    <img src="https://img.shields.io/badge/Status-Incomplete-orange.svg">
     </a>
-    <a href="https://github.com/Piero24/YOUR-REPO-NAME/issues">
-    <img src="https://img.shields.io/github/issues/piero24/VanillaNet-cpp">
+    <a href="https://github.com/Piero24/Barcode-Pipeline/issues">
+    <img src="https://img.shields.io/github/issues/piero24/Barcode-Pipeline">
     </a>
-    <a href="https://github.com/Piero24/YOUR-REPO-NAME/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/piero24/VanillaNet-cpp">
+    <a href="https://github.com/Piero24/Barcode-Pipeline/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/piero24/Barcode-Pipeline">
+    </a>
+    <a href="https://colab.research.google.com/github/Piero24/Barcode-Pipeline/blob/main/Barcode_Detection_and_Decoding.ipynb">
+    <img src="https://colab.research.google.com/assets/colab-badge.svg">
     </a>
 </p>
 <p align="center">
-    A two-stage pipeline in Python to detect, normalize, and decode barcodes from images.
+    A two-stage computer vision pipeline to detect and normalize barcodes from images using a fine-tuned YOLOv8 model.
+    <br/>
+    <a href="https://colab.research.google.com/github/Piero24/Barcode-Pipeline/blob/main/Barcode_Detection_and_Decoding.ipynb"><strong>View a Demo »</strong></a>
     <br/>
     <br/>
-    <a href="https://github.com/Piero24/YOUR-REPO-NAME">View Source</a>
+    <a href="https://github.com/Piero24/Barcode-Pipeline/issues">Report Bug</a>
     •
-    <a href="https://github.com/Piero24/YOUR-REPO-NAME/issues">Report Bug</a>
-    •
-    <a href="https://github.com/Piero24/YOUR-REPO-NAME/issues">Request Feature</a>
+    <a href="https://github.com/Piero24/Barcode-Pipeline/issues">Request Feature</a>
 </p>
 
 
@@ -40,61 +44,98 @@
 <br/><br/>
 <h2 id="introduction">📔  Introduction</h2>
 <p>
-    This project documents the design and implementation of a two-stage pipeline for accurately detecting and decoding barcodes from images. The primary objective is to build a robust system capable of handling barcodes in real-world conditions, including variable lighting, perspective distortion, and image noise.
+    This project documents the design and implementation of a two-stage pipeline for accurately detecting and decoding barcodes from images. The objective is to build a robust system capable of handling barcodes in real-world conditions, including variable lighting, perspective distortion, and image noise. The pipeline uses a fine-tuned <strong>YOLOv8s</strong> model for detection and a series of robust OpenCV functions for perspective correction.
 </p>
-<br/>
-<p>
-    The pipeline leverages a state-of-the-art object detection model for localization and a series of advanced computer vision techniques for image normalization. The project is implemented in a Jupyter Notebook to provide a clear, step-by-step demonstration of the entire process.
-</p>
+<br>
 
-> [!WARNING]  
-> This project is **incomplete**. While the barcode detection and perspective correction stages are functional, the final decoding stage has not been successfully implemented. The main challenges were the sensitivity to image noise, the complexity of barcode symbologies (like Code 128), and the propagation of small errors in width measurements, which prevented reliable decoding from scratch. The code for the attempted decoding is included for documentation and educational purposes.
+> [!WARNING]
+> This project is **incomplete**. While the barcode detection and perspective normalization stages are functional and robust, the final decoding stage was unsuccessful. The primary challenges were:
+> - **Sensitivity to Noise:** Minor image noise and compression artifacts consistently corrupted the measured bar/space widths.
+> - **Symbology Complexity:** Implementing a full, robust decoder for standards like Code 128 proved to be a significant challenge.
+> - **Error Propagation:** Small errors in the initial module width calculation cascaded, rendering the entire decoding process unreliable.
+>
+> The code for the attempted decoding process is included to document the progress and showcase the techniques that were explored.
 
 <br/>
 <div align="center">
-    <img src="https://miro.medium.com/v2/resize:fit:1400/1*c45b7E2u5u239W1O8S2a-Q.gif" style="width: 100%;" width="100%">
-    <p>Image credits to: <a href="https://miro.medium.com/v2/resize:fit:1400/1*c45b7E2u5u239W1O8S2a-Q.gif">Miro</a></p>
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3g0bmgybnlyenpycnZlMGR0OGp5bXF6ZXZveGRwOHpxZ3hzaHhsayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l3vR31v0L57c0s5gI/giphy.gif" style="width: 100%;" width="100%">
+    <p>Image credits to: <a href="https://giphy.com">GIPHY</a></p>
 </div>
 <br/>
 <p>
-    The pipeline is structured into two main stages:
+    The pipeline is designed to first locate barcodes in an image and then transform them into a clean, frontal view, which is the necessary prerequisite for any successful decoding attempt.
 </p>
+
 <p>
-    <strong>STAGE 1: DETECTION</strong>: A fine-tuned **YOLOv8s** model is used to identify the location of barcodes within a source image. The model, trained on a custom dataset of 5,000 images, produces precise bounding boxes around detected barcodes. It is downloaded on-the-fly from the Hugging Face Hub.
-</p>
-<p>
-    <strong>STAGE 2: NORMALIZATION & DECODING ATTEMPT</strong>: For each detected bounding box, the following steps are performed:
+    <strong>PIPELINE OVERVIEW</strong>: The program takes an RGB image as input and processes it through a two-stage pipeline to prepare barcodes for decoding.
     <ol>
         <li>
-            <strong>Perspective Correction</strong>
+            <strong>Barcode Detection with YOLOv8s</strong>
             <p>
-                A series of robust computer vision functions are applied to each detected bounding box to perform perspective correction. This isolates and un-warps the barcode into a flat, frontal view, making it easier to process. Techniques include Gaussian Blur, Thresholding, Morphological Operations, and Canny Edge Detection.
+                A <strong>YOLOv8s</strong> model, fine-tuned on a custom dataset of 5,000 images, is used to accurately detect the location of barcodes and produce precise bounding boxes.
             </p>
         </li>
         <li>
-            <strong>Image Enhancement</strong>
+            <strong>Perspective Correction & Normalization</strong>
             <p>
-                After perspective correction, further enhancements are applied to clean up the barcode image, using gradient analysis and masking to produce a high-contrast, clean representation of the bars.
+                For each detected barcode, a series of computer vision techniques (including blurring, thresholding, and contour analysis) is applied to isolate the barcode region. A perspective transformation is then used to un-warp the barcode into a flat, frontal, and horizontally-aligned image.
             </p>
         </li>
         <li>
-            <strong>Decoding (Incomplete)</strong>
+            <strong>Attempted Decoding (Incomplete)</strong>
             <p>
-                The final step was to decode the normalized barcode. This part of the pipeline proved to be the most challenging. Despite implementing logic to measure bar/space widths and match them against Code 128 symbology, consistent and reliable decoding was not achieved. The code for this attempt is preserved in the notebook to document the approach and its challenges.
+                The final step was to decode the normalized barcode image. This involved analyzing the pattern of black and white bars to extract the encoded information. Despite significant effort, this stage did not produce consistently reliable results. The code is provided for reference and as a starting point for future work.
             </p>
         </li>
     </ol>
+</p>
+
+<div align="center">
+    <img src="https://i.imgur.com/k6lP0W1.png" style="width: 100%;" width="100%">
+    <p>Example of the pipeline's output, showing the original image, cropped ROI, and the normalized/polished barcode ready for decoding.</p>
+</div>
+<br/>
+<br/>
+<p align="center">
+    <a href="#top">Try a demo on Google Colab</a>
+</p>
+<p align="center">
+    <a href="https://colab.research.google.com/github/Piero24/Barcode-Pipeline/blob/main/Barcode_Detection_and_Decoding.ipynb">
+        <img src="https://colab.research.google.com/assets/colab-badge.svg">
+    </a>
 </p>
 
 <p align="right"><a href="#top">⇧</a></p>
 
 <h2 id="made-in"><br/>🛠  Built With</h2>
 <p>
-    This project is written entirely in Python and primarily relies on the following libraries:
+    This project is written in Python and relies on powerful libraries for deep learning and computer vision.
 </p>
 <p align="center">
-    <a href="https://www.python.org/">Python</a> • <a href="https://opencv.org">OpenCV</a> • <a href="https://docs.ultralytics.com/">Ultralytics (YOLOv8)</a> • <a href="https://numpy.org/">NumPy</a> • <a href="https://huggingface.co/">Hugging Face Hub</a>
+    <a href="https://www.python.org/">Python</a> • <a href="https://pytorch.org/">PyTorch</a> • <a href="https://github.com/ultralytics/ultralytics">Ultralytics YOLOv8</a> • <a href="https://opencv.org">OpenCV</a> • <a href="https://huggingface.co/">Hugging Face Hub</a>
 </p>
+<p align="right"><a href="#top">⇧</a></p>
+
+<h2 id="documentation"><br/><br/>⚠️  Improvements & Future Work</h2>
+
+<p>
+    Given the incomplete nature of the project, the primary area for improvement is the decoding stage. Key steps to complete the pipeline include:
+</p>
+<ul>
+    <li>
+        <strong>Improve Image Preprocessing:</strong> Enhance the image cleaning steps after normalization to create a more uniform representation of the bars, reducing the impact of lighting inconsistencies and noise.
+    </li>
+    <li>
+        <strong>Robust Module Width Calculation:</strong> Develop a more resilient method for calculating the fundamental module width (the width of the narrowest bar/space), as this is the most critical step for accurate decoding.
+    </li>
+    <li>
+        <strong>Implement a Full Decoder:</strong> Build a complete decoding engine for a specific symbology (e.g., Code 128), including handling character sets, checksum validation, and special characters.
+    </li>
+     <li>
+        <strong>Leverage Third-Party Decoding Libraries:</strong> As an alternative to a from-scratch implementation, integrate a proven, open-source decoding library like ZBar or ZXing to complete the pipeline quickly and reliably.
+    </li>
+</ul>
+
 <p align="right"><a href="#top">⇧</a></p>
 
 <h2 id="documentation"><br/><br/>📚  Documentation</h2>
@@ -129,59 +170,41 @@
 
 <h2 id="prerequisites"><br/>🧰  Prerequisites</h2>
 <p>
-    This project requires Python and several libraries. You can install all necessary dependencies using `pip`. It is highly recommended to use a virtual environment.
+    To run this project, you will need a Python environment. A CUDA-enabled GPU is recommended for faster YOLOv8 inference, but the code will run on a CPU.
 </p>
 
-1.  Create and activate a virtual environment (optional but recommended):
-    ```sh
-    python -m venv venv
-    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-    ```
+To install all necessary dependencies, run the following command in your terminal:
 
-2.  Install the required packages from the `requirements.txt` file or using the command below:
-    ```sh
-    pip install ultralytics opencv-python matplotlib numpy huggingface_hub
-    ```
+```sh
+pip install ultralytics opencv-python matplotlib numpy huggingface_hub
+```
 
 <p align="right"><a href="#top">⇧</a></p>
 
 
 <h2 id="how-to-start"><br/>⚙️  How to Start</h2>
 <p>
-    Follow these steps to run the barcode detection and normalization pipeline.
+    The project is provided as a Jupyter Notebook, which allows for easy, step-by-step execution and visualization of the results.
 </p>
 <br/>
 
-1.  Clone the repo:
+1. Clone the repo
   
-    ```sh
-    git clone https://github.com/Piero24/YOUR-REPO-NAME.git
-    cd YOUR-REPO-NAME
-    ```
+```sh
+git clone https://github.com/Piero24/Barcode-Pipeline.git
+```
+2. Navigate to the project directory
+```sh
+cd Barcode-Pipeline
+```
+3. Install the dependencies as described in the <a href="#prerequisites">Prerequisites</a> section.
+4. Create an `input_images` folder in the root directory and place your images inside it.
+5. Open the `Barcode_Detection_and_Decoding.ipynb` notebook in a compatible environment (like Jupyter Lab or Google Colab).
+6. **Run the Notebook**: Execute the cells sequentially from top to bottom. The first run will automatically download the fine-tuned YOLOv8 model weights from Hugging Face Hub.
 
-2.  Install the prerequisites as described in the <a href="#prerequisites">Prerequisites</a> section.
+> [!NOTE] 
+> The notebook is self-contained and includes detailed explanations for each code block. You can observe the output of the detection and normalization stages, as well as the logged failures of the decoding attempts.
 
-3.  Create a directory named `input_images` in the root of the project folder:
-
-    ```sh
-    mkdir input_images
-    ```
-4. Place the images you want to process inside the `input_images` directory.
-
-5.  Launch Jupyter Notebook or JupyterLab:
-
-    ```sh
-    jupyter notebook
-    ```
-    
-6. Open the main project notebook (e.g., `main.ipynb`) and run the cells from top to bottom. The notebook will automatically download the YOLO model, process each image in the `input_images` directory, and display the results.
-
-<br/>
-<div align="center">
-    <img src="https://raw.githubusercontent.com/Piero24/VanillaNet-cpp/main/.github/out.png" style="width: 100%;" width="100%">
-    <p><i>The output in the console will show the detection results from the YOLO model.</i></p>
-</div>
-<br/>
 <p align="right"><a href="#top">⇧</a></p>
 
 
@@ -209,7 +232,7 @@
 
 <h3 id="report-a-bug"><br/>🐛  Bug and Feature</h3>
 <p>
-    To <strong>report a bug</strong> or to request the implementation of <strong>new features</strong>, it is strongly recommended to use the <a href="https://github.com/Piero24/YOUR-REPO-NAME/issues"><strong>ISSUES tool from Github »</strong></a>
+    To <strong>report a bug</strong> or to request the implementation of <strong>new features</strong>, it is strongly recommended to use the <a href="https://github.com/Piero24/Barcode-Pipeline/issues"><strong>ISSUES tool from Github »</strong></a>
 </p>
 <br/>
 <p>
@@ -239,7 +262,7 @@ of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including...</i>
 <br/>
 <br/>
-<a href="https://github.com/Piero24/YOUR-REPO-NAME/blob/main/LICENSE">
+<a href="https://github.com/Piero24/Barcode-Pipeline/blob/main/LICENSE">
     <strong>License Documentation »</strong>
 </a>
 <br/>
@@ -263,28 +286,28 @@ the individual licenses are indicated in the following section.
     <th>Link</th>
   </tr>
   <tr  align="center">
-    <td>Ultralytics</td>
-    <td><a href="https://ultralytics.com/">Ultralytics</a></td>
+    <td>YOLOv8</td>
+    <td><a href="https://github.com/ultralytics">Ultralytics</a></td>
     <td>AGPL-3.0</td>
-    <td><a href="https://github.com/ultralytics/ultralytics">here</a></td>
+    <td><a href="https://github.com/ultralytics/ultralytics/blob/main/LICENSE">here</a></td>
+  </tr>
+  <tr  align="center">
+    <td>PyTorch</td>
+    <td><a href="https://pytorch.org">PyTorch</a></td>
+    <td>BSD-style</td>
+    <td><a href="https://github.com/pytorch/pytorch/blob/main/LICENSE">here</a></td>
   </tr>
   <tr  align="center">
     <td>OpenCV</td>
     <td><a href="https://opencv.org">OpenCV</a></td>
-    <td>Apache-2.0</td>
-    <td><a href="https://github.com/opencv/opencv">here</a></td>
+    <td>Apache-2.0 license</td>
+    <td><a href="https://github.com/opencv/opencv/blob/4.x/LICENSE">here</a></td>
   </tr>
   <tr  align="center">
-    <td>NumPy</td>
-    <td><a href="https://numpy.org/">The NumPy community</a></td>
-    <td>BSD 3-Clause</td>
-    <td><a href="https://github.com/numpy/numpy">here</a></td>
-  </tr>
-    <tr  align="center">
-    <td>huggingface_hub</td>
-    <td><a href="https://huggingface.co/">Hugging Face, Inc.</a></td>
-    <td>Apache-2.0</td>
-    <td><a href="https://github.com/huggingface/huggingface_hub">here</a></td>
+    <td>Hugging Face Hub</td>
+    <td><a href="https://huggingface.co">Hugging Face</a></td>
+    <td>Apache-2.0 license</td>
+    <td><a href="https://github.com/huggingface/huggingface_hub/blob/main/LICENSE">here</a></td>
   </tr>
 </table>
 
