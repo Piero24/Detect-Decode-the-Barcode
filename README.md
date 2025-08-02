@@ -3,24 +3,24 @@
 <br/>
 
 <p align="center">
-  <img src="https://cdn-icons-png.flaticon.com/512/1251/1251564.png" width="105" height="100">
+  <img src="https://github.com/Piero24/Detect-Decode-the-Barcode/blob/e98a82fe4679d47a82966937576e1e8a9559a2a7/.github/barcode_decoder_logo.webp" width="150">
 </p>
 <h1 align="center">
-    <a href="https://github.com/Piero24/Barcode-Pipeline">Barcode Detection & Decoding Pipeline</a>
+    <a href="https://github.com/Piero24/Detect-Decode-the-Barcode">Barcode Detection & Decoding Pipeline</a>
 </h1>
 <p align="center">
     <!-- BADGES -->
-    <a href="https://github.com/Piero24/Barcode-Pipeline/commits/main">
-    <img src="https://img.shields.io/github/last-commit/piero24/Barcode-Pipeline">
+    <a href="https://github.com/Piero24/Detect-Decode-the-Barcode/commits/main">
+    <img src="https://img.shields.io/github/last-commit/piero24/Detect-Decode-the-Barcode">
     </a>
-    <a href="https://github.com/Piero24/Barcode-Pipeline">
+    <a href="https://github.com/Piero24/Detect-Decode-the-Barcode">
     <img src="https://img.shields.io/badge/Status-Incomplete-orange.svg">
     </a>
-    <a href="https://github.com/Piero24/Barcode-Pipeline/issues">
-    <img src="https://img.shields.io/github/issues/piero24/Barcode-Pipeline">
+    <a href="https://github.com/Piero24/Detect-Decode-the-Barcode/issues">
+    <img src="https://img.shields.io/github/issues/piero24/Detect-Decode-the-Barcode">
     </a>
-    <a href="https://github.com/Piero24/Barcode-Pipeline/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/piero24/Barcode-Pipeline">
+    <a href="https://github.com/Piero24/Detect-Decode-the-Barcode/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/piero24/Detect-Decode-the-Barcode">
     </a>
     <a href="https://colab.research.google.com/github/Piero24/Detect-Decode-the-Barcode/blob/main/Decode_the_Barcode.ipynb">
     <img src="https://colab.research.google.com/assets/colab-badge.svg">
@@ -32,9 +32,9 @@
     <a href="https://colab.research.google.com/github/Piero24/Detect-Decode-the-Barcode/blob/main/Decode_the_Barcode.ipynb"><strong>View a Demo »</strong></a>
     <br/>
     <br/>
-    <a href="https://github.com/Piero24/Barcode-Pipeline/issues">Report Bug</a>
+    <a href="https://github.com/Piero24/Detect-Decode-the-Barcode/issues">Report Bug</a>
     •
-    <a href="https://github.com/Piero24/Barcode-Pipeline/issues">Request Feature</a>
+    <a href="https://github.com/Piero24/Detect-Decode-the-Barcode/issues">Request Feature</a>
 </p>
 
 
@@ -57,10 +57,18 @@
 > The code for the attempted decoding process is included to document the progress and showcase the techniques that were explored.
 
 <br/>
-<div align="center">
-    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3g0bmgybnlyenpycnZlMGR0OGp5bXF6ZXZveGRwOHpxZ3hzaHhsayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l3vR31v0L57c0s5gI/giphy.gif" style="width: 100%;" width="100%">
-    <p>Image credits to: <a href="https://giphy.com">GIPHY</a></p>
-</div>
+<table align="center">
+  <tr>
+    <td><img src="https://github.com/Piero24/VLM-Object-Detection/blob/b736d69a54e5d507ed401ee7fee884a53d981c46/.github/bbox/final_output-2.png" alt="Green-Handled Scissors" width="300"></td>
+    <td><img src="https://github.com/Piero24/VLM-Object-Detection/blob/b736d69a54e5d507ed401ee7fee884a53d981c46/.github/bbox/final_output-3.png" alt="Green and Black Screwdriver" width="300"></td>
+    <td><img src="https://github.com/Piero24/VLM-Object-Detection/blob/b736d69a54e5d507ed401ee7fee884a53d981c46/.github/bbox/final_output-4.png" alt="Purple Marker" width="300"></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/Piero24/VLM-Object-Detection/blob/b736d69a54e5d507ed401ee7fee884a53d981c46/.github/bbox/final_output-5.png" alt="Roll of Masking Tape" width="300"></td>
+    <td><img src="https://github.com/Piero24/VLM-Object-Detection/blob/b736d69a54e5d507ed401ee7fee884a53d981c46/.github/bbox/final_output-6.png" alt="Two Black Plastic Clips" width="300"></td>
+    <td><img src="https://github.com/Piero24/VLM-Object-Detection/blob/b736d69a54e5d507ed401ee7fee884a53d981c46/.github/bbox/final_output.png" alt="White Xbox Game Controller" width="300"></td>
+  </tr>
+</table>
 <br/>
 <p>
     The pipeline is designed to first locate barcodes in an image and then transform them into a clean, frontal view, which is the necessary prerequisite for any successful decoding attempt.
@@ -191,11 +199,11 @@ pip install ultralytics opencv-python matplotlib numpy huggingface_hub
 1. Clone the repo
   
 ```sh
-git clone https://github.com/Piero24/Barcode-Pipeline.git
+git clone https://github.com/Piero24/Detect-Decode-the-Barcode.git
 ```
 2. Navigate to the project directory
 ```sh
-cd Barcode-Pipeline
+cd Detect-Decode-the-Barcode
 ```
 3. Install the dependencies as described in the <a href="#prerequisites">Prerequisites</a> section.
 4. Create an `input_images` folder in the root directory and place your images inside it.
@@ -232,7 +240,7 @@ cd Barcode-Pipeline
 
 <h3 id="report-a-bug"><br/>🐛  Bug and Feature</h3>
 <p>
-    To <strong>report a bug</strong> or to request the implementation of <strong>new features</strong>, it is strongly recommended to use the <a href="https://github.com/Piero24/Barcode-Pipeline/issues"><strong>ISSUES tool from Github »</strong></a>
+    To <strong>report a bug</strong> or to request the implementation of <strong>new features</strong>, it is strongly recommended to use the <a href="https://github.com/Piero24/Detect-Decode-the-Barcode/issues"><strong>ISSUES tool from Github »</strong></a>
 </p>
 <br/>
 <p>
@@ -262,7 +270,7 @@ of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including...</i>
 <br/>
 <br/>
-<a href="https://github.com/Piero24/Barcode-Pipeline/blob/main/LICENSE">
+<a href="https://github.com/Piero24/Detect-Decode-the-Barcode/blob/main/LICENSE">
     <strong>License Documentation »</strong>
 </a>
 <br/>
