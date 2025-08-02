@@ -59,14 +59,24 @@
 <br/>
 <table align="center">
   <tr>
-    <td><img src="https://github.com/Piero24/VLM-Object-Detection/blob/b736d69a54e5d507ed401ee7fee884a53d981c46/.github/bbox/final_output-2.png" alt="Green-Handled Scissors" width="300"></td>
-    <td><img src="https://github.com/Piero24/VLM-Object-Detection/blob/b736d69a54e5d507ed401ee7fee884a53d981c46/.github/bbox/final_output-3.png" alt="Green and Black Screwdriver" width="300"></td>
-    <td><img src="https://github.com/Piero24/VLM-Object-Detection/blob/b736d69a54e5d507ed401ee7fee884a53d981c46/.github/bbox/final_output-4.png" alt="Purple Marker" width="300"></td>
+    <td><img src="https://github.com/Piero24/Detect-Decode-the-Barcode/blob/a134a9b26d31706583b22544c8586ea1e372ef90/.github/bbox/3/original_image.jpg" alt="" width="300"></td>
+    <td><img src="https://github.com/Piero24/Detect-Decode-the-Barcode/blob/a134a9b26d31706583b22544c8586ea1e372ef90/.github/bbox/4/original_image.jpg" alt="" width="300"></td>
+    <td><img src="https://github.com/Piero24/Detect-Decode-the-Barcode/blob/a134a9b26d31706583b22544c8586ea1e372ef90/.github/bbox/6/original_image.jpg" alt="" width="300"></td>
   </tr>
   <tr>
-    <td><img src="https://github.com/Piero24/VLM-Object-Detection/blob/b736d69a54e5d507ed401ee7fee884a53d981c46/.github/bbox/final_output-5.png" alt="Roll of Masking Tape" width="300"></td>
-    <td><img src="https://github.com/Piero24/VLM-Object-Detection/blob/b736d69a54e5d507ed401ee7fee884a53d981c46/.github/bbox/final_output-6.png" alt="Two Black Plastic Clips" width="300"></td>
-    <td><img src="https://github.com/Piero24/VLM-Object-Detection/blob/b736d69a54e5d507ed401ee7fee884a53d981c46/.github/bbox/final_output.png" alt="White Xbox Game Controller" width="300"></td>
+    <td><img src="https://github.com/Piero24/Detect-Decode-the-Barcode/blob/a134a9b26d31706583b22544c8586ea1e372ef90/.github/bbox/3/cropped_barcode_roi-1.jpg" alt="" width="300"></td>
+    <td><img src="https://github.com/Piero24/Detect-Decode-the-Barcode/blob/a134a9b26d31706583b22544c8586ea1e372ef90/.github/bbox/4/cropped_barcode_roi-1.jpg" alt="" width="300"></td>
+    <td><img src="https://github.com/Piero24/Detect-Decode-the-Barcode/blob/a134a9b26d31706583b22544c8586ea1e372ef90/.github/bbox/6/cropped_barcode_roi-2.jpg" alt="" width="300"></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/Piero24/Detect-Decode-the-Barcode/blob/a134a9b26d31706583b22544c8586ea1e372ef90/.github/bbox/3/normalized_barcode_image-1.jpg" alt="" width="300"></td>
+    <td><img src="https://github.com/Piero24/Detect-Decode-the-Barcode/blob/a134a9b26d31706583b22544c8586ea1e372ef90/.github/bbox/4/normalized_barcode_image-1.jpg" alt="" width="300"></td>
+    <td><img src="https://github.com/Piero24/Detect-Decode-the-Barcode/blob/a134a9b26d31706583b22544c8586ea1e372ef90/.github/bbox/6/normalized_barcode_image-2.jpg" alt="" width="300"></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/Piero24/Detect-Decode-the-Barcode/blob/a134a9b26d31706583b22544c8586ea1e372ef90/.github/bbox/3/polished_barcode_image-1.jpg" alt="" width="300"></td>
+    <td><img src="https://github.com/Piero24/Detect-Decode-the-Barcode/blob/a134a9b26d31706583b22544c8586ea1e372ef90/.github/bbox/4/polished_barcode_image-1.jpg" alt="" width="300"></td>
+    <td><img src="https://github.com/Piero24/Detect-Decode-the-Barcode/blob/a134a9b26d31706583b22544c8586ea1e372ef90/.github/bbox/6/polished_barcode_image-2.jpg" alt="" width="300"></td>
   </tr>
 </table>
 <br/>
@@ -99,7 +109,7 @@
 </p>
 
 <div align="center">
-    <img src="https://i.imgur.com/k6lP0W1.png" style="width: 100%;" width="100%">
+    <img src="https://github.com/Piero24/Detect-Decode-the-Barcode/blob/4c7dc4e9385381e0d2d42332cddac019aed300b8/.github/res.png" style="width: 100%;" width="100%">
     <p>Example of the pipeline's output, showing the original image, cropped ROI, and the normalized/polished barcode ready for decoding.</p>
 </div>
 <br/>
